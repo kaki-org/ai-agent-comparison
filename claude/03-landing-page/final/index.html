@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>かきまる 公式ページ</title>
+  <meta name="description" content="秋の陽だまり育ちの柿のゆるキャラ「かきまる」の紹介ページです。">
+  <link rel="icon" href="kakimaru.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --bg: #FFF6E8;
+      --bg-alt: #FFE9CC;
+      --surface: #FFFFFF;
+      --text: #3B2314;
+      --text-sub: #7A5534;
+      --accent: #E06A14;
+      --accent-strong: #C9561A;
+      --leaf: #4E8A2A;
+      --line: #F2D3AE;
+      --shadow: 0 10px 30px rgba(160, 80, 20, 0.12);
+      --radius: 24px;
+      --font: "Hiragino Maru Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", "Meiryo", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.8;
+      -webkit-text-size-adjust: 100%;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+
+    .container { width: min(1080px, 100% - 32px); margin-inline: auto; }
+
+    /* ヘッダー */
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255, 246, 232, 0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .container {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; min-height: 60px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 8px;
+      font-weight: bold; font-size: 1.2rem; color: var(--accent);
+      text-decoration: none; white-space: nowrap;
+    }
+    .logo img { width: 32px; height: 32px; object-fit: cover; object-position: 50% 30%; border-radius: 50%; }
+    .nav { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav a {
+      text-decoration: none; font-size: 0.9rem; color: var(--text-sub);
+      padding: 6px 12px; border-radius: 999px;
+    }
+    .nav a:hover, .nav a:focus-visible { background: var(--bg-alt); color: var(--accent-strong); }
+
+    /* ヒーロー */
+    .hero { padding: 56px 0 72px; overflow: hidden; }
+    .hero .container {
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      align-items: center; gap: 40px;
+    }
+    .hero-eyebrow {
+      display: inline-block; margin: 0 0 12px;
+      padding: 4px 14px; border-radius: 999px;
+      background: var(--bg-alt); color: var(--accent-strong);
+      font-size: 0.9rem; font-weight: bold;
+    }
+    .hero h1 {
+      margin: 0; font-size: clamp(2.6rem, 8vw, 4.4rem);
+      line-height: 1.15; color: var(--accent); letter-spacing: 0.04em;
+    }
+    .hero h1 small {
+      display: block; margin-top: 6px;
+      font-size: 0.32em; letter-spacing: 0.3em; color: var(--text-sub);
+    }
+    .hero-lead { margin: 20px 0 28px; font-size: 1.1rem; }
+    .btn {
+      display: inline-block; text-decoration: none; font-weight: bold;
+      background: var(--accent); color: #fff;
+      padding: 12px 28px; border-radius: 999px;
+      box-shadow: 0 6px 0 var(--accent-strong);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn:hover { transform: translateY(2px); box-shadow: 0 4px 0 var(--accent-strong); }
+    .hero-visual { position: relative; }
+    .hero-visual::before {
+      content: ""; position: absolute; inset: 8% 4%;
+      background: radial-gradient(circle, #FFD9A8 0%, rgba(255, 217, 168, 0) 70%);
+      z-index: -1;
+    }
+    .hero-visual img {
+      width: min(420px, 100%); margin-inline: auto;
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      animation: bob 3.2s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-visual img { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* セクション共通 */
+    section { padding: 72px 0; scroll-margin-top: 60px; }
+    .section-alt { background: var(--bg-alt); }
+    .section-title { text-align: center; margin: 0 0 40px; }
+    .section-title .en {
+      display: block; font-size: 0.85rem; letter-spacing: 0.3em; color: var(--leaf);
+    }
+    .section-title h2 { margin: 4px 0 0; font-size: clamp(1.6rem, 5vw, 2.2rem); }
+
+    /* キャラクター紹介 */
+    .intro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 28px 24px; box-shadow: var(--shadow);
+    }
+    .card .icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      display: grid; place-items: center; font-size: 1.8rem;
+      background: var(--bg-alt); margin-bottom: 12px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 1.15rem; color: var(--accent-strong); }
+    .card p { margin: 0; color: var(--text-sub); }
+    .intro-message {
+      margin: 40px auto 0; max-width: 720px; text-align: center;
+      font-size: 1.1rem;
+    }
+
+    /* プロフィール */
+    .profile {
+      display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: start;
+      background: var(--surface); border-radius: var(--radius);
+      padding: 32px; box-shadow: var(--shadow);
+    }
+    .profile img { border-radius: 16px; }
+    .profile dl { margin: 0; display: grid; grid-template-columns: 8em 1fr; column-gap: 16px; }
+    .profile dt, .profile dd {
+      margin: 0; padding: 14px 0; border-bottom: 1px dashed var(--line);
+    }
+    .profile dt { font-weight: bold; color: var(--accent-strong); }
+    .profile dl > :nth-last-child(-n+2) { border-bottom: 0; }
+
+    /* 柿の魅力 */
+    .charm-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .charm {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: var(--surface); border-radius: var(--radius);
+      padding: 24px; box-shadow: var(--shadow);
+    }
+    .charm .num {
+      flex: none; width: 48px; height: 48px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--accent); color: #fff; font-weight: bold; font-size: 1.2rem;
+    }
+    .charm h3 { margin: 0 0 6px; font-size: 1.1rem; }
+    .charm p { margin: 0; color: var(--text-sub); }
+    .proverb {
+      margin: 40px auto 0; max-width: 720px; text-align: center;
+      padding: 24px; border: 2px dashed var(--accent); border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .proverb strong { display: block; font-size: 1.3rem; color: var(--accent); }
+
+    /* フッター */
+    .site-footer {
+      background: var(--text); color: #F7E3CB;
+      text-align: center; padding: 40px 0; font-size: 0.9rem;
+    }
+    .site-footer p { margin: 4px 0; }
+
+    /* タブレット */
+    @media (max-width: 860px) {
+      .hero .container { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+      .hero-visual { order: -1; }
+      .hero-visual img { width: min(320px, 80%); }
+      .intro-grid { grid-template-columns: 1fr; }
+      .profile { grid-template-columns: 1fr; padding: 24px; }
+      .profile img { width: min(240px, 70%); margin-inline: auto; }
+      .charm-list { grid-template-columns: 1fr; }
+    }
+    /* スマートフォン */
+    @media (max-width: 520px) {
+      .nav a { padding: 4px 8px; font-size: 0.8rem; }
+      .logo span { display: none; }
+      .hero { padding: 32px 0 48px; }
+      section { padding: 56px 0; }
+      .profile dl { grid-template-columns: 6.5em 1fr; column-gap: 12px; }
+      .card, .charm { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#top"><img src="kakimaru.png" alt=""><span>かきまる</span></a>
+      <nav class="nav" aria-label="ページ内ナビゲーション">
+        <a href="#intro">紹介</a>
+        <a href="#profile">プロフィール</a>
+        <a href="#charm">柿の魅力</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="container">
+        <div class="hero-text">
+          <p class="hero-eyebrow">柿のゆるキャラ</p>
+          <h1>かきまる<small>KAKIMARU</small></h1>
+          <p class="hero-lead">秋の陽だまり育ち。おひるねが大好きで、<br>ほっぺはいつでも完熟の甘さ。</p>
+          <a class="btn" href="#intro">かきまるを知る</a>
+        </div>
+        <div class="hero-visual">
+          <img src="kakimaru.svg" alt="オレンジ色の柿のからだに緑のへたをのせ、手をふる笑顔のキャラクター「かきまる」" width="600" height="760">
+        </div>
+      </div>
+    </div>
+
+    <section id="intro">
+      <div class="container">
+        <div class="section-title">
+          <span class="en">CHARACTER</span>
+          <h2>キャラクター紹介</h2>
+        </div>
+        <div class="intro-grid">
+          <article class="card">
+            <div class="icon" aria-hidden="true">🍂</div>
+            <h3>まんまるボディ</h3>
+            <p>つやつやのオレンジ色のからだは、秋の日ざしをたっぷり浴びた証。頭のへたと小さな葉っぱがチャームポイントです。</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">😴</div>
+            <h3>おひるねの名人</h3>
+            <p>縁側の陽だまりを見つけると、すぐにうとうと。ゆっくり休むほど甘くなる、と本人は信じています。</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">👋</div>
+            <h3>ごあいさつ上手</h3>
+            <p>だれにでも元気に手をふる人なつっこい性格。ほんのり赤いほっぺは、うれしいときにもっと赤くなります。</p>
+          </article>
+        </div>
+        <p class="intro-message">「みんなの毎日に、ちょっとだけ甘い時間をとどけたいな。」</p>
+      </div>
+    </section>
+
+    <section id="profile" class="section-alt">
+      <div class="container">
+        <div class="section-title">
+          <span class="en">PROFILE</span>
+          <h2>プロフィール</h2>
+        </div>
+        <div class="profile">
+          <img src="kakimaru.png" alt="かきまるの全身イラスト" width="600" height="760" loading="lazy">
+          <dl>
+            <dt>なまえ</dt><dd>かきまる（KAKIMARU）</dd>
+            <dt>たんじょうび</dt><dd>10月26日（柿の日）</dd>
+            <dt>しゅっしん</dt><dd>山あいの里の、日あたりのいい柿の木</dd>
+            <dt>せいかく</dt><dd>のんびり・人なつっこい・ちょっぴりくいしんぼう</dd>
+            <dt>すきなもの</dt><dd>陽だまり、おひるね、秋晴れの空</dd>
+            <dt>にがてなもの</dt><dd>からす、木枯らし</dd>
+            <dt>とくぎ</dt><dd>じっとしているだけで甘くなること</dd>
+            <dt>くちぐせ</dt><dd>「まるっと、いい日だね。」</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="charm">
+      <div class="container">
+        <div class="section-title">
+          <span class="en">CHARM OF KAKI</span>
+          <h2>柿の魅力</h2>
+        </div>
+        <div class="charm-list">
+          <div class="charm">
+            <span class="num" aria-hidden="true">1</span>
+            <div>
+              <h3>ビタミンCがたっぷり</h3>
+              <p>柿はビタミンCを多く含む果物のひとつ。中くらいの柿1個で、1日の目安量のかなりの部分をまかなえるといわれています。</p>
+            </div>
+          </div>
+          <div class="charm">
+            <span class="num" aria-hidden="true">2</span>
+            <div>
+              <h3>やさしい自然の甘み</h3>
+              <p>熟すほどにとろりと甘くなる柿。かため派の「富有柿」、やわらか派の「熟柿」など、食感で好みが分かれるのも楽しみです。</p>
+            </div>
+          </div>
+          <div class="charm">
+            <span class="num" aria-hidden="true">3</span>
+            <div>
+              <h3>干し柿で冬まで楽しめる</h3>
+              <p>渋柿も皮をむいて干せば、あんぽ柿や干し柿に。軒先にずらりと並ぶ柿のれんは、日本の秋冬の風物詩です。</p>
+            </div>
+          </div>
+          <div class="charm">
+            <span class="num" aria-hidden="true">4</span>
+            <div>
+              <h3>日本の秋を彩る果物</h3>
+              <p>学名は <i>Diospyros kaki</i>。「KAKI」の名で海外にも知られる、日本を代表する秋の味覚です。</p>
+            </div>
+          </div>
+        </div>
+        <div class="proverb">
+          <strong>「柿が赤くなれば医者が青くなる」</strong>
+          <p>昔からそういわれるほど、柿は秋の元気の味方でした。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>かきまる — まるっと、いい日だね。</p>
+      <p><small>&copy; 2026 かきまる</small></p>
+    </div>
+  </footer>
+</body>
+</html>
