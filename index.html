@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Agent Comparison</title>
+<style>
+  :root { --bg: #fffaf3; --fg: #2b2118; --muted: #7a6a5c; --line: #ead9c6; --accent: #e8730c; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1d1914; --fg: #f3ebe1; --muted: #b3a493; --line: #3d342a; --accent: #ff9a3c; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px 16px; background: var(--bg); color: var(--fg);
+         font-family: system-ui, -apple-system, "Hiragino Sans", sans-serif; line-height: 1.6; }
+  main { max-width: 860px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  p { color: var(--muted); margin: 0 0 24px; }
+  .wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; min-width: 520px; }
+  th, td { border-bottom: 1px solid var(--line); padding: 10px 8px; text-align: left; }
+  th { font-size: .85rem; color: var(--muted); font-weight: 600; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cursor・Claude・Genspark 比較</h1>
+  <p>同じプロンプトを3つの AI エージェントに渡した成果物です。各リンクは手直し後の最終版です。</p>
+  <div class="wrap">
+    <table>
+      <thead>
+        <tr><th>題材</th><th>Cursor</th><th>Claude</th><th>Genspark</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="prompts/01-tetris.md">01. テトリス</a></td>
+          <td><a href="cursor/01-tetris/final/">final</a></td>
+          <td><a href="claude/01-tetris/final/">final</a></td>
+          <td><a href="genspark/01-tetris/final/">final</a></td></tr>
+        <tr><td><a href="prompts/02-kaki-character.md">02. 柿のゆるキャラ</a></td>
+          <td><a href="cursor/02-kaki-character/final/">final</a></td>
+          <td><a href="claude/02-kaki-character/final/">final</a></td>
+          <td><a href="genspark/02-kaki-character/final/">final</a></td></tr>
+        <tr><td><a href="prompts/03-landing-page.md">03. 紹介 LP</a></td>
+          <td><a href="cursor/03-landing-page/final/">final</a></td>
+          <td><a href="claude/03-landing-page/final/">final</a></td>
+          <td><a href="genspark/03-landing-page/final/">final</a></td></tr>
+        <tr><td><a href="prompts/04-slides.md">04. スライド</a></td>
+          <td><a href="cursor/04-slides/final/">final</a></td>
+          <td><a href="claude/04-slides/final/">final</a></td>
+          <td><a href="genspark/04-slides/final/">final</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+</body>
+</html>
