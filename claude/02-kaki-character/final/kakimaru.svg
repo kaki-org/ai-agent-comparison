@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" width="600" height="760">
+  <defs>
+    <radialGradient id="body" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#FFB15C"/>
+      <stop offset="60%" stop-color="#F7862A"/>
+      <stop offset="100%" stop-color="#E06A14"/>
+    </radialGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8CC152"/>
+      <stop offset="100%" stop-color="#4E8A2A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="600" height="760" rx="32" fill="#FFF6E8"/>
+  <circle cx="90" cy="90" r="40" fill="#FFE3BF"/>
+  <circle cx="520" cy="140" r="26" fill="#FFE3BF"/>
+  <circle cx="500" cy="470" r="18" fill="#FFE3BF"/>
+
+  <!-- 影 -->
+  <ellipse cx="300" cy="528" rx="150" ry="18" fill="#000" opacity="0.08"/>
+
+  <!-- 足 -->
+  <ellipse cx="250" cy="512" rx="34" ry="18" fill="#C9561A"/>
+  <ellipse cx="350" cy="512" rx="34" ry="18" fill="#C9561A"/>
+
+  <!-- 腕 -->
+  <path d="M138 350 Q100 320 112 284" stroke="#E06A14" stroke-width="22" stroke-linecap="round" fill="none"/>
+  <path d="M462 350 Q500 380 488 420" stroke="#E06A14" stroke-width="22" stroke-linecap="round" fill="none"/>
+
+  <!-- 胴体（柿） -->
+  <path d="M300 222
+           C380 214 470 228 486 330
+           C496 420 420 505 300 505
+           C180 505 104 420 114 330
+           C130 228 220 214 300 222 Z" fill="url(#body)"/>
+  <!-- 柿のくぼみ線 -->
+  <path d="M220 236 Q180 330 214 470" stroke="#D9661A" stroke-width="4" fill="none" opacity="0.5"/>
+  <path d="M380 236 Q420 330 386 470" stroke="#D9661A" stroke-width="4" fill="none" opacity="0.5"/>
+  <!-- ツヤ -->
+  <ellipse cx="215" cy="265" rx="40" ry="22" fill="#fff" opacity="0.45" transform="rotate(-25 215 265)"/>
+
+  <!-- へた -->
+  <g fill="url(#leaf)">
+    <path d="M300 222 C250 190 190 196 176 228 C226 246 270 240 300 222 Z"/>
+    <path d="M300 222 C350 190 410 196 424 228 C374 246 330 240 300 222 Z"/>
+    <path d="M300 222 C256 240 240 270 262 278 C284 266 296 246 300 222 Z"/>
+    <path d="M300 222 C344 240 360 270 338 278 C316 266 304 246 300 222 Z"/>
+  </g>
+  <rect x="292" y="176" width="16" height="50" rx="7" fill="#6B4423"/>
+  <!-- 小さな葉っぱ -->
+  <path d="M308 188 C340 156 382 162 392 176 C366 198 330 202 308 188 Z" fill="#8CC152"/>
+  <path d="M310 188 C340 180 366 176 388 176" stroke="#4E8A2A" stroke-width="3" fill="none"/>
+
+  <!-- 顔 -->
+  <ellipse cx="245" cy="350" rx="16" ry="22" fill="#3B2314"/>
+  <ellipse cx="355" cy="350" rx="16" ry="22" fill="#3B2314"/>
+  <circle cx="251" cy="341" r="6" fill="#fff"/>
+  <circle cx="361" cy="341" r="6" fill="#fff"/>
+  <circle cx="240" cy="358" r="3" fill="#fff"/>
+  <circle cx="350" cy="358" r="3" fill="#fff"/>
+  <!-- ほっぺ -->
+  <ellipse cx="200" cy="395" rx="28" ry="16" fill="#FF6F6F" opacity="0.55"/>
+  <ellipse cx="400" cy="395" rx="28" ry="16" fill="#FF6F6F" opacity="0.55"/>
+  <!-- 口 -->
+  <path d="M272 392 Q300 428 328 392 Q300 404 272 392 Z" fill="#8A2E1C"/>
+  <path d="M286 404 Q300 418 314 404 Q300 410 286 404 Z" fill="#FF8A8A"/>
+
+  <!-- 名前 -->
+  <text x="300" y="610" text-anchor="middle" font-family="Hiragino Maru Gothic ProN, Hiragino Sans, sans-serif" font-size="56" font-weight="bold" fill="#E06A14">かきまる</text>
+  <text x="300" y="648" text-anchor="middle" font-family="Hiragino Maru Gothic ProN, Hiragino Sans, sans-serif" font-size="20" fill="#9A6A3A">KAKIMARU</text>
+  <text x="300" y="700" text-anchor="middle" font-family="Hiragino Maru Gothic ProN, Hiragino Sans, sans-serif" font-size="22" fill="#5A3B22">秋の陽だまり育ち。おひるねが大好きで、</text>
+  <text x="300" y="732" text-anchor="middle" font-family="Hiragino Maru Gothic ProN, Hiragino Sans, sans-serif" font-size="22" fill="#5A3B22">ほっぺはいつでも完熟の甘さ。</text>
+</svg>
