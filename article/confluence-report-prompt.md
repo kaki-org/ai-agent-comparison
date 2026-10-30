@@ -17,7 +17,7 @@
 
 ## ページ構成
 
-1. 結論（3〜5行。現時点のデータで言えることだけ。Genspark のスライドが未完である旨を書く）
+1. 結論（3〜5行。実験データから言えることだけ）
 2. 実験の目的とルール
 3. 実験条件（ツール・プラン・モデル・設定）
 4. 題材ごとの結果（01〜04。各題材に「結果の表」「ツールごとの所見」「成果物へのリンク」）
@@ -103,15 +103,15 @@
 ### 04 スライド
 | | Claude | Cursor | Genspark |
 |---|---|---|---|
-| 所要時間 | 約2分44秒 | 約16分 | FIXME |
-| 形式 | claude.ai の Artifact（PDF/PPTX に書き出し） | PPTX（pptxgenjs で生成） | FIXME |
-| 枚数 | 5 | 5 | FIXME |
-| 要件充足 | 3/3 | 3/3 | FIXME |
+| 所要時間 | 約2分44秒 | 約16分 | 約25分 |
+| 形式 | claude.ai の Artifact（PDF/PPTX に書き出し） | PPTX（pptxgenjs で生成） | Genspark のスライド（PDF/PPTX をダウンロード） |
+| 枚数 | 5 | 5 | 5 |
+| 要件充足 | 3/3 | 3/3 | 3/3 |
 
 - Claude: ローカルにファイルを作らず claude.ai のスライドとして公開。栄養の数値は「原典未照合」と自ら注記し出典を記載。2〜4枚目の右端にキャラとセリフを固定配置
 - Cursor: Anthropic 製の PPTX スキル（~/.claude/skills 配下）を読んで手順に従った。キャラの背景を Python で切り抜いて配置。キャラ名がカタカナの「ポテガキ」に変化。作業フォルダに依存ライブラリ（86MB）をインストール。正岡子規の句で締め
-- 両者とも栄養の数値（甘柿100gあたりビタミンC 70mg 等）は日本食品標準成分表（八訂）の値と一致（筆者確認）
-- FIXME: Genspark のスライドの結果一式
+- Genspark: 3ツールで最も時間がかかった。キャラ名「かき丸」を維持し、5枚目に 02 のプロフィールカード画像をそのまま配置。産地・収穫カレンダー・栄養・品種・選び方まで情報量が最多で、全スライドに出典（農水省統計・FAO・食品成分表・自治体公式など）を記載。PPTX の文字は編集可能なテキスト。品種説明に「刀根早生は早生の枝変わり」という誤り（正しくは平核無の枝変わり）が1か所
+- 3ツールとも栄養の数値（甘柿100gあたりビタミンC 70mg 等）は日本食品標準成分表（八訂）の値と一致（筆者確認）
 - FIXME: 見た目評価（◎○△）とスクリーンショット
 
 ### 横断して見えた違い（記録からの事実）
@@ -131,5 +131,5 @@
 - Genspark テトリス: https://www.genspark.ai/agents/sas?id=e05a96db-f805-465d-bfe0-092b1839fbc9
 - Genspark 柿キャラ: https://www.genspark.ai/agents/sas?id=c8fb39b7-3b94-434b-8798-1a797edc5dfe
 - Genspark LP: https://www.genspark.ai/agents/sas?id=85f1bf47-da6d-41a3-9e12-52d2f58b3069
-- Genspark スライド: FIXME
+- Genspark スライド: https://www.genspark.ai/agents/sas?id=6e05e083-76af-4494-80fa-f23ed9aff96a
 - Claude スライド（Artifact、現在は非公開）: https://claude.ai/artifact/73gzx1kNqbWp4WfoAF5evw
