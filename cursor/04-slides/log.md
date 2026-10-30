@@ -21,3 +21,4 @@
 ## メモ
 
 - 条件: User Rules なし。モデルはデフォルト表示のまま（Grok 4.7 High Fast）
+- 条件補足: User Rules はないが、ホームの ~/AGENTS.md（筆者の普段の指示）を Cursor が読み込んでいた

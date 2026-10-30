@@ -20,6 +20,8 @@ Cursor・Claude（Claude Code）・Genspark に同じプロンプトを渡し、
 - Cursor / Claude Code は各題材ディレクトリを作業ディレクトリにし、他ツールの成果物を参照させない
 - Claude Code は企画の文脈を持たない新規セッションで実行する
 - Genspark の成果物はダウンロードして配置し、共有 URL を `log.md` に記録する
+- 各ツールは筆者の普段の設定のまま使う（Claude Code は `~/.claude/CLAUDE.md`、Cursor は `~/AGENTS.md` を読み込む）
+- 作業フォルダは他ツールの作業フォルダと同じ階層に置かない（Cursor が上位フォルダを検索して他ツールの成果物を読んだため。`cursor/03-landing-page/log.md` 参照）
 
 ## 評価
 
