@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ぽて柿｜まんまる甘柿のゆるキャラ</title>
+  <meta name="description" content="果樹園からやってきた甘柿のゆるキャラ、ぽて柿の紹介ページです。プロフィールと、柿の甘さ・食べ方・季節の魅力をまとめました。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='18' r='11' fill='%23F08A1F'/%3E%3Cellipse cx='16' cy='10' rx='7' ry='4' fill='%236B9A45'/%3E%3Crect x='14.5' y='4' width='3' height='6' rx='1.2' fill='%238B5A2B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fff0d3;
+      --paper-2: #fff8e8;
+      --ink: #3c2415;
+      --muted: #6d4b34;
+      --line: rgba(90, 42, 12, 0.12);
+      --orange: #e36b12;
+      --orange-deep: #b84309;
+      --leaf: #4f7d32;
+      --leaf-deep: #2f5a22;
+      --shadow: 0 16px 40px rgba(120, 58, 12, 0.12);
+      --header: 4.25rem;
+      --max: 68rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5.5rem;
+    }
+
+    @media (max-width: 860px) {
+      html {
+        scroll-padding-top: 8rem;
+      }
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(42rem 24rem at 110% -10%, rgba(255, 168, 72, 0.38), transparent 60%),
+        radial-gradient(32rem 22rem at -20% 18%, rgba(120, 168, 70, 0.2), transparent 58%),
+        radial-gradient(28rem 20rem at 80% 100%, rgba(255, 186, 120, 0.28), transparent 55%),
+        var(--paper);
+      font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Hiragino Maru Gothic Pro", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.85;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--orange-deep);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--leaf-deep);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 3px;
+    }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--ink);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      z-index: 20;
+    }
+
+    .skip:focus {
+      top: 0.75rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 240, 211, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner,
+    .hero,
+    .section,
+    .site-footer {
+      width: min(var(--max), calc(100% - 2.5rem));
+      margin-inline: auto;
+    }
+
+    .header-inner {
+      min-height: var(--header);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem 1.25rem;
+      flex-wrap: wrap;
+      padding: 0.4rem 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .brand svg {
+      width: 2rem;
+      height: 2rem;
+      flex: none;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 0.35rem;
+    }
+
+    .nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      min-height: 2.75rem;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 0.75rem;
+      border-radius: 999px;
+    }
+
+    .nav a:hover {
+      background: rgba(227, 107, 18, 0.12);
+      color: var(--orange-deep);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      align-items: center;
+      gap: 1.5rem 2rem;
+      padding: 2.5rem 0 3.5rem;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin: 0 0 0.8rem;
+      color: var(--leaf-deep);
+      font-weight: 700;
+      font-size: 0.86rem;
+      letter-spacing: 0.14em;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 4px rgba(227, 107, 18, 0.16);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.2rem, 8vw, 5.6rem);
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    h1 rt {
+      font-size: 0.28em;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .catch {
+      margin: 1rem 0 0;
+      font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .lede {
+      margin: 0.9rem 0 0;
+      max-width: 36rem;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.9rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: var(--orange-deep);
+      color: #fffaf3;
+      box-shadow: 0 8px 18px rgba(184, 67, 9, 0.22);
+    }
+
+    .button.primary:hover {
+      background: var(--leaf-deep);
+      color: #fff;
+    }
+
+    .button.ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid rgba(60, 36, 21, 0.25);
+    }
+
+    .button.ghost:hover {
+      border-color: var(--leaf);
+      color: var(--leaf-deep);
+      background: rgba(79, 125, 50, 0.08);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: grid;
+      justify-items: center;
+    }
+
+    .hero-visual img {
+      width: min(100%, 34rem);
+      border-radius: 2rem;
+      background: var(--paper);
+      -webkit-mask-image: radial-gradient(ellipse 86% 84% at 50% 48%, #000 70%, transparent 100%);
+      mask-image: radial-gradient(ellipse 86% 84% at 50% 48%, #000 70%, transparent 100%);
+    }
+
+    .bubble {
+      position: absolute;
+      z-index: 2;
+      top: 0.35rem;
+      left: 0.35rem;
+      margin: 0;
+      max-width: 13.5rem;
+      padding: 0.7rem 1rem;
+      background: var(--paper-2);
+      border: 1.5px solid var(--line);
+      border-radius: 1.3rem 1.3rem 1.3rem 0.35rem;
+      box-shadow: var(--shadow);
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .section {
+      padding: 1rem 0 4.5rem;
+    }
+
+    .section h2 {
+      margin: 0.35rem 0 0;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.35;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 560px) {
+      .h-break {
+        display: block;
+      }
+    }
+
+    .section-lead {
+      max-width: 40rem;
+      margin: 0.8rem 0 0;
+      color: var(--muted);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 1.25rem;
+      margin-top: 1.6rem;
+    }
+
+    .story,
+    .sheet,
+    .appeal-card,
+    .season,
+    .closing {
+      background: rgba(255, 248, 232, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .story {
+      padding: 1.5rem 1.4rem 1.3rem;
+    }
+
+    .story p {
+      margin: 0;
+    }
+
+    .story p + p {
+      margin-top: 0.9rem;
+    }
+
+    .traits {
+      display: grid;
+      gap: 0.8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .traits li {
+      padding: 1rem 1.05rem 0.95rem;
+      background: rgba(255, 248, 232, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 1.2rem;
+    }
+
+    .traits h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .traits p {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .sheet {
+      position: relative;
+      margin-top: 1.5rem;
+      padding: 1.4rem 1.3rem 1.2rem;
+      overflow: hidden;
+    }
+
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-end;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px dashed rgba(90, 42, 12, 0.25);
+    }
+
+    .sheet-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+    }
+
+    .sheet-head strong {
+      display: block;
+      margin-top: 0.15rem;
+      font-size: 1.55rem;
+      letter-spacing: 0.06em;
+    }
+
+    .stamp {
+      width: 5.2rem;
+      height: 5.2rem;
+      flex: none;
+      display: grid;
+      place-items: center;
+      border: 3px solid var(--leaf);
+      color: var(--leaf-deep);
+      border-radius: 50%;
+      transform: rotate(-12deg);
+      background:
+        radial-gradient(circle, transparent 58%, rgba(79, 125, 50, 0.08) 59% 68%, transparent 69%);
+      text-align: center;
+      line-height: 1.15;
+      font-weight: 900;
+    }
+
+    .stamp span {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 8.5rem minmax(0, 1fr);
+      margin: 0.3rem 0 0;
+    }
+
+    .profile dt,
+    .profile dd {
+      margin: 0;
+      padding: 0.72rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .profile dt {
+      color: var(--leaf-deep);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .profile dd {
+      padding-left: 0.8rem;
+    }
+
+    .appeal-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .appeal-card {
+      padding: 1.25rem 1.2rem 1.15rem;
+    }
+
+    .appeal-card .num {
+      display: inline-grid;
+      place-items: center;
+      width: 2.1rem;
+      height: 2.1rem;
+      margin-bottom: 0.55rem;
+      border-radius: 50%;
+      background: rgba(227, 107, 18, 0.14);
+      color: var(--orange-deep);
+      font-weight: 900;
+    }
+
+    .appeal-card h3 {
+      margin: 0;
+      font-size: 1.22rem;
+      line-height: 1.4;
+    }
+
+    .appeal-card p {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+    }
+
+    .eats {
+      margin: 0.7rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .eats li {
+      position: relative;
+      padding-left: 1.15rem;
+    }
+
+    .eats li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .seasons {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .season {
+      padding: 1rem 0.95rem 0.9rem;
+    }
+
+    .season .when {
+      margin: 0;
+      color: var(--orange-deep);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      font-size: 0.86rem;
+    }
+
+    .season h3 {
+      margin: 0.25rem 0 0;
+      font-size: 1.08rem;
+    }
+
+    .season p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .season.now {
+      background: #fff1d4;
+      border-color: rgba(184, 67, 9, 0.45);
+      box-shadow: 0 16px 40px rgba(184, 67, 9, 0.12);
+    }
+
+    .closing {
+      display: grid;
+      grid-template-columns: 7.5rem minmax(0, 1fr);
+      gap: 0.5rem 1rem;
+      align-items: center;
+      margin-top: 1.6rem;
+      padding: 0.8rem 1.2rem 0.8rem 0.4rem;
+    }
+
+    .closing img {
+      width: 7.5rem;
+      margin-inline: auto;
+      -webkit-mask-image: radial-gradient(circle at 50% 46%, #000 58%, transparent 76%);
+      mask-image: radial-gradient(circle at 50% 46%, #000 58%, transparent 76%);
+    }
+
+    .closing p {
+      margin: 0;
+    }
+
+    .closing .sign {
+      margin-top: 0.25rem;
+      font-weight: 900;
+    }
+
+    .site-footer {
+      padding: 0 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .intro-grid,
+      .appeal-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .bubble {
+        top: 0.4rem;
+        left: 0.2rem;
+      }
+
+      .seasons {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner,
+      .hero,
+      .section,
+      .site-footer {
+        width: min(var(--max), calc(100% - 1.5rem));
+      }
+
+      .profile,
+      .closing {
+        grid-template-columns: 1fr;
+      }
+
+      .profile dd {
+        padding: 0 0 0.8rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .profile dt {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .sheet-head {
+        align-items: flex-start;
+      }
+
+      .seasons {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 3.4rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="18" r="11" fill="#F08A1F"></circle>
+          <ellipse cx="16" cy="10" rx="7" ry="4.2" fill="#6B9A45"></ellipse>
+          <rect x="14.6" y="3.5" width="2.8" height="6.5" rx="1.2" fill="#8B5A2B"></rect>
+        </svg>
+        ぽて柿
+      </a>
+      <nav class="nav" aria-label="ページ内">
+        <a href="#about">紹介</a>
+        <a href="#profile">プロフィール</a>
+        <a href="#appeal">柿の魅力</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div>
+        <p class="kicker">果樹園の公式ゆるキャラ</p>
+        <h1>ぽて<ruby>柿<rt>がき</rt></ruby></h1>
+        <p class="catch">まんまるの甘柿が、<br>腕をひろげて秋を迎えにきました。</p>
+        <p class="lede">ぽて柿は、日当たりいちばんの枝先で育った甘柿のキャラクターです。大きな瞳と赤いほっぺ、頭の葉帽子が目印。近づくと、午後の果樹園みたいな空気になります。</p>
+        <div class="actions">
+          <a class="button primary" href="#about">キャラクター紹介</a>
+          <a class="button ghost" href="#profile">プロフィールを見る</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <p class="bubble">ぽてっと、いっしょにいてね。</p>
+        <img src="pote-gaki.jpg" width="1024" height="1024" alt="オレンジ色の丸い柿のゆるキャラ、ぽて柿。緑の葉と茶色いへたをかぶり、両手をひろげて笑っている">
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <p class="kicker">キャラクター紹介</p>
+      <h2>枝先からおりてきた、<span class="h-break">あったか柿。</span></h2>
+      <p class="section-lead">名前の「ぽて」は、手のひらに載せたときの、あの丸さと柔らかさです。柿なのに、ちょっとだけ人なつっこい。それがぽて柿です。</p>
+      <div class="intro-grid">
+        <div class="story">
+          <p>実が橙色に色づくころ、ぽて柿は腕をひろげて枝からおりてきます。渋みはもう甘さに変わっていて、切らずにそのままでも笑顔です。</p>
+          <p>仕事は、ひとつきり。会った人の「おいしい」を集めて、果樹園へ持ち帰ること。おやつをひとりじめせず、ひなたを半分こするのが流儀です。</p>
+          <p>頭の四枚の葉は、お日さま除けの帽子。茎はしっかり立っていますが、本人はのんびり屋です。急がされると、ほっぺが先に赤くなります。</p>
+        </div>
+        <ul class="traits">
+          <li>
+            <h3>あいさつの形</h3>
+            <p>言葉より先に、両手をいっぱいにひろげます。それが「こんにちは」です。</p>
+          </li>
+          <li>
+            <h3>いちばんの仕事</h3>
+            <p>午後のひなたぼっこ。影が短くなる時間を、ちゃんと待っています。</p>
+          </li>
+          <li>
+            <h3>集めているもの</h3>
+            <p>みんなの「おいしい」。干し柿ひとつと、交換してくれることもあります。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="profile">
+      <p class="kicker">プロフィール</p>
+      <h2>果樹園支部の設定票。</h2>
+      <p class="section-lead">公式に残してある、ぽて柿のプロフィールです。数字や肩書きより、居場所と好きなもののほうが長めに書いてあります。</p>
+      <article class="sheet">
+        <div class="sheet-head">
+          <p>ゆるキャラ設定票 No.001<strong>ぽて柿</strong></p>
+          <div class="stamp" aria-hidden="true"><span>公式<br>ぽて</span></div>
+        </div>
+        <dl class="profile">
+          <dt>なまえ</dt>
+          <dd>ぽて柿（ぽてがき）</dd>
+          <dt>しゅるい</dt>
+          <dd>甘柿のゆるキャラ。木になったまま甘くなるタイプです。</dd>
+          <dt>たんじょうび</dt>
+          <dd>10月26日。実が橙色になる、秋のど真ん中です。</dd>
+          <dt>しゅっしん</dt>
+          <dd>日当たりいちばんの枝先。風通しがよく、午後まで光が残る場所です。</dd>
+          <dt>せいかく</dt>
+          <dd>のんびり、あったか、少し照れ屋。ほめられると茎がピンとなります。</dd>
+          <dt>すきなもの</dt>
+          <dd>ひなた、干し柿、お茶うけの時間、みんなの「おいしい」。</dd>
+          <dt>にがて</dt>
+          <dd>朝いちばんの霜と、ひとりぼっちのおやつ。</dd>
+          <dt>とくぎ</dt>
+          <dd>そばにいると、空気がすこし甘くなります。気のせい、かもしれません。</dd>
+          <dt>くちぐせ</dt>
+          <dd>「ぽてっと、いっしょにいてね。」</dd>
+          <dt>おおきさ</dt>
+          <dd>両手ですっぽり包めるくらい。見た目より、しっかり重いです。</dd>
+        </dl>
+      </article>
+    </section>
+
+    <section class="section" id="appeal">
+      <p class="kicker">柿の魅力</p>
+      <h2>からだの色は、<span class="h-break">秋そのもの。</span></h2>
+      <p class="section-lead">ぽて柿のオレンジは、着色ではありません。日本の秋に実る柿の色を、そのまま着ています。甘さの奥にある魅力を、四つにまとめました。</p>
+      <div class="appeal-list">
+        <article class="appeal-card">
+          <span class="num">1</span>
+          <h3>庭先が、季節になる</h3>
+          <p>柿の木は、家のそばに植えられてきた果樹です。橙色の実がひとつ灯るだけで、その庭は秋になります。葉が落ちたあとも実だけ残る姿は、日本の景色の定番です。</p>
+        </article>
+        <article class="appeal-card">
+          <span class="num">2</span>
+          <h3>甘柿と、渋を抜く知恵</h3>
+          <p>柿には、木で甘くなる甘柿と、渋みを抜いて食べる渋柿があります。渋の正体は、水に溶けるタンニンです。干す、アルコールにつける、炭酸ガスで処理する、といった方法でタンニンが溶けなくなると、甘さだけが残ります。ぽて柿は甘柿なので、切ったその場で食べられます。</p>
+        </article>
+        <article class="appeal-card">
+          <span class="num">3</span>
+          <h3>甘さだけじゃない実</h3>
+          <p>生の甘柿には、ビタミンC、β-カロテン、食物繊維、カリウムが含まれます。干し柿にすると水分が抜け、甘みも栄養も凝縮されます。表面の白い粉はカビではなく、果糖やブドウ糖が結晶したものです。</p>
+        </article>
+        <article class="appeal-card">
+          <span class="num">4</span>
+          <h3>食べ方は、季節の数だけ</h3>
+          <ul class="eats">
+            <li>そのまま。とろける富有柿も、シャキシャキの次郎柿も。</li>
+            <li>干し柿。冬まで甘さを残す、昔からの保存食です。</li>
+            <li>柿なます。大根と合わせて、正月の皿にも上ります。</li>
+            <li>葉の香り。奈良の柿の葉寿司のように、葉を料理に使う土地もあります。</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="seasons" aria-label="柿の一年">
+        <article class="season">
+          <p class="when">春</p>
+          <h3>小さな白い花</h3>
+          <p>初夏にかけて、小さな白い花をつけます。ぽて柿の葉帽子は、この季節の名残です。</p>
+        </article>
+        <article class="season">
+          <p class="when">夏</p>
+          <h3>まだ青い実</h3>
+          <p>緑の実が、枝のうえでゆっくりふくらみます。甘さは、このあとから仕込みます。</p>
+        </article>
+        <article class="season now">
+          <p class="when">秋・いま</p>
+          <h3>ぽて柿の本番</h3>
+          <p>実が橙色になり、甘柿は収穫のとき。腕をひろげるのは、この季節だけです。</p>
+        </article>
+        <article class="season">
+          <p class="when">冬</p>
+          <h3>干し柿になる</h3>
+          <p>軒先に下がった干し柿が、次の春まで甘さを預かります。白い粉は、熟した証拠です。</p>
+        </article>
+      </div>
+
+      <aside class="closing">
+        <img src="pote-gaki.jpg" width="1024" height="1024" alt="">
+        <div>
+          <p>次の秋も、同じ枝のうえで待っています。通りがかったら、片手だけでもひろげてやってください。</p>
+          <p class="sign">ぽてっと、また会おうね。</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>ぽて柿は、果樹園の枝先からやってきました。</p>
+  </footer>
+</body>
+</html>
